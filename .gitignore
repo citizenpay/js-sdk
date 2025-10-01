@@ -1,0 +1,23 @@
+# Dependency directories
+node_modules/
+pnpm-lock.yaml
+
+# Output of the compiler
+dist/
+
+# IDE - VSCode
+.vscode/
+*.code-workspace
+
+# System Files
+.DS_Store
+Thumbs.db
+
+.env
+
+cache
+
+artifacts
+
+# jest
+coverage/
