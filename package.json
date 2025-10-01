@@ -20,6 +20,9 @@
         "test:coverage": "jest --coverage",
         "manual-publish": "npm publish --access public"
     },
+    "publishConfig": {
+        "access": "public"
+    },
     "keywords": [
         "web3",
         "sdk",
