@@ -1,17 +1,17 @@
 <div align="center">
-    <h1>CitizenPay JavaScript SDK</h1>
-    <p>Official SDK for integrating with <a href="https://citizenpay.xyz">CitizenPay</a></p>
+    <h1>Citizen Pay JavaScript SDK</h1>
+    <p>Official SDK for integrating with <a href="https://citizenpay.xyz">Citizen Pay</a></p>
 </div>
 
-An easy-to-use JavaScript SDK for creating and managing orders through the [CitizenPay](https://citizenpay.xyz) API. This SDK provides TypeScript support and seamless integration for order management functionality.
+An easy-to-use JavaScript SDK for creating and managing orders through the [Citizen Pay](https://citizenpay.xyz) API. This SDK provides TypeScript support and seamless integration for order management functionality.
 
 # Introduction
 
-Welcome to the official JavaScript SDK for [CitizenPay](https://citizenpay.xyz). CitizenPay is a decentralized payment platform that enables merchants and developers to accept cryptocurrency payments through a simple, secure, and user-friendly interface.
+Welcome to the official JavaScript SDK for [Citizen Pay](https://citizenpay.xyz). Citizen Pay is a decentralized payment platform that enables merchants and developers to accept cryptocurrency payments through a simple, secure, and user-friendly interface.
 
 This SDK provides:
 
-- **Order Management**: Create and manage orders through the CitizenPay API
+- **Order Management**: Create and manage orders through the Citizen Pay API
 - **TypeScript Support**: Full type definitions for better development experience
 - **Framework Agnostic**: Works with any JavaScript/TypeScript application
 
@@ -41,7 +41,7 @@ pnpm add @citizenpay/sdk
 
 ## Orders
 
-The orders module provides functionality for creating and managing orders through the CitizenPay API. This is the primary way to integrate payment flows into your application.
+The orders module provides functionality for creating and managing orders through the Citizen Pay API. This is the primary way to integrate payment flows into your application.
 
 ### Types
 
@@ -83,7 +83,7 @@ interface OrderItem {
 
 #### `createOrder(params: OrderRequest): Promise<number>`
 
-Creates a new order through the CitizenPay API. This function sends a POST request to create a new order with the specified details. The order will be associated with a specific place/merchant and can include multiple items with quantities.
+Creates a new order through the Citizen Pay API. This function sends a POST request to create a new order with the specified details. The order will be associated with a specific place/merchant and can include multiple items with quantities.
 
 **Parameters:**
 
