@@ -32,6 +32,10 @@ export interface OrderItem {
 interface OrderResponse {
   /** Unique identifier for the created order */
   orderId: number;
+  /** URL-friendly identifier for the order */
+  slug: string;
+  /** Direct link to the order checkout page */
+  link: string;
 }
 
 /**
@@ -49,7 +53,7 @@ interface OrderResponse {
  * @param params.description - Optional description of the order
  * @param params.items - Optional array of items with their quantities
  *
- * @returns Promise that resolves to the created order ID
+ * @returns Promise that resolves to the order response containing orderId, slug, and link
  *
  * @throws {Error} When the API request fails (non-2xx response)
  *
@@ -58,15 +62,18 @@ interface OrderResponse {
  * import { createOrder } from '@citizenpay/sdk';
  *
  * // Basic order creation
- * const orderId = await createOrder({
+ * const order = await createOrder({
  *   apiKey: 'your-api-key',
  *   placeId: 12345,
  *   total: 2500, // $25.00 in cents
  *   description: 'Coffee and pastry'
  * });
+ * console.log('Order ID:', order.orderId);
+ * console.log('Order slug:', order.slug);
+ * console.log('Order link:', order.link);
  *
  * // Order with items
- * const orderId = await createOrder({
+ * const order = await createOrder({
  *   baseUrl: 'https://checkout.citizenpay.xyz',
  *   apiKey: 'your-api-key',
  *   placeId: 12345,
@@ -77,6 +84,7 @@ interface OrderResponse {
  *     { id: 3, quantity: 1 }
  *   ]
  * });
+ * console.log('Order created:', order.orderId);
  * ```
  */
 export const createOrder = async ({
@@ -86,7 +94,7 @@ export const createOrder = async ({
   total,
   description,
   items,
-}: OrderRequest) => {
+}: OrderRequest): Promise<OrderResponse> => {
   let url = "https://checkout.citizenpay.xyz/api/v1/partners/orders";
   if (baseUrl) {
     url = `${
@@ -108,5 +116,5 @@ export const createOrder = async ({
   }
   const order = (await response.json()) as OrderResponse;
 
-  return order.orderId;
+  return order;
 };
