@@ -1,6 +1,6 @@
 {
     "name": "@citizenpay/sdk",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "An sdk to easily work with citizen pay.",
     "main": "./dist/src/index.js",
     "module": "./dist/src/index.js",
