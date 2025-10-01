@@ -29,7 +29,7 @@ export interface OrderItem {
 /**
  * Response from the order creation API
  */
-interface OrderResponse {
+export interface OrderResponse {
   /** Unique identifier for the created order */
   orderId: number;
   /** URL-friendly identifier for the order */
